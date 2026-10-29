@@ -1,0 +1,16 @@
+CREATE OR REPLACE PROCEDURE dswtdir1_dbo.sp_iccbs_innove_php_unbilled_postload_transform()
+ LANGUAGE plpgsql
+AS $procedure$
+BEGIN
+    /* More rules */
+    CALL dswtdir1_dbo.trinnove_php_unbilled_zerrorupd();
+    /* Rule to check sum of 01 Amount matches 99 record sum */
+    CALL dswtdir1_dbo.trinnove_php_unbilled_zloadedupd();
+    /* Update zLoaded Flag */
+    CALL dswtdir1_dbo.trinnove_php_unbilled_zload_message_zffi_report_odbc_z_messageupd();
+    /* Update Load Log Message */
+    CALL dswtdir1_dbo.trinnove_php_unbilled_zload_message_zffi_report_odbc_z_message_2nddocumentupd()
+    /* Update Load Log Message for 2nd Document Number */
+    ;
+END;
+$procedure$

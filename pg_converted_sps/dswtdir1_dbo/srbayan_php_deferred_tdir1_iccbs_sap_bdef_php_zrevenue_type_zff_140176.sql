@@ -1,0 +1,13 @@
+CREATE OR REPLACE PROCEDURE dswtdir1_dbo.srbayan_php_deferred_tdir1_iccbs_sap_bdef_php_zrevenue_type_zff()
+ LANGUAGE plpgsql
+AS $procedure$
+/*
+Created by:  Sindhuja Beram 09/04/2020
+Modified by: Sindhuja Beram 09/24/2020
+Description: Updates zRevenue_Item_Code & zRevenue_Type  based on zREvenue_Item_Code , zService Type  from ZFFI_REV_SERV
+*/
+BEGIN
+    UPDATE dswtdir1_dbo.srbayan_php_deferred_tdir1_iccbs_sap_bdef_php_zrevenue_type_zffi_rev_servupdsel
+    SET zrevenue_type = zrevenue_typenew;
+END;
+$procedure$

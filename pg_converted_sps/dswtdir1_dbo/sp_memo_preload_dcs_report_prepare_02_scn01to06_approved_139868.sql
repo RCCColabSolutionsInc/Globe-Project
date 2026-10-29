@@ -1,0 +1,13 @@
+CREATE OR REPLACE PROCEDURE dswtdir1_dbo.sp_memo_preload_dcs_report_prepare_02_scn01to06_approved()
+ LANGUAGE plpgsql
+AS $procedure$
+BEGIN
+    /* MemoApp Dashboard Records: Cleansed and Approved Records (For Scenarions 1-6) - Preload Report */
+    TRUNCATE TABLE dswtdir1_dbo.memo_preload_dcs_report_prepare_02_scn01to06_approved_cache;
+    INSERT INTO dswtdir1_dbo.memo_preload_dcs_report_prepare_02_scn01to06_approved_cache (counter, doc_date, pstg_date, type, cocd, curr, transldate, exchange_rate, ledger_group, period, reference, document_header_text, pk, vendor_gl_acct, special_gl, amount_in_doc_curr, amount_in_local_cur, amount_in_loc_curr2, ref_key_1, ref_key_2, reference_key_3, bline_date, purch_doc, purchasing_line_item, wbs_element, material, plnt, value_date, payt, "Order", cost_ctr, profit_ctr, partner_profit_center, tr_prt, assignment, text, quantity, uom, brand, product_lines, sub_product_a, sub_product_b, franchise_area, business_center, revenue_type, event, vat_tax_code, mvno, technology, charge_code, plan_type, name, street, country, postal_code, city, bank_key, bank_account, tax_number, message, asset, reserve_1, withholding_tax_base, withholding_tax_type, witholding_tax_code, payment_method, new_company_code, reserve_2, zdsp_uniquekey, zdsp_order, zproponent, zscenario, zscenario_counts, zcounterlineitem, zinputfileprocessed_date, zroutedforload_date, zsource, zlegacyzinputfilename, zlegacyrownumber, zapprovalstatus)
+    SELECT
+        counter, doc_date, pstg_date, type, cocd, curr, transldate, exchange_rate, ledger_group, period, reference, document_header_text, pk, vendor_gl_acct, special_gl, amount_in_doc_curr, amount_in_local_cur, amount_in_loc_curr2, ref_key_1, ref_key_2, reference_key_3, bline_date, purch_doc, purchasing_line_item, wbs_element, material, plnt, value_date, payt, "Order", cost_ctr, profit_ctr, partner_profit_center, tr_prt, assignment, text, quantity, uom, brand, product_lines, sub_product_a, sub_product_b, franchise_area, business_center, revenue_type, event, vat_tax_code, mvno, technology, charge_code, plan_type, name, street, country, postal_code, city, bank_key, bank_account, tax_number, message, asset, reserve_1, withholding_tax_base, withholding_tax_type, witholding_tax_code, payment_method, new_company_code, reserve_2, zdsp_uniquekey, zdsp_order, zproponent, zscenario, zscenario_counts, zcounterlineitem, zinputfileprocessed_date, zroutedforload_date, zsource, zlegacyzinputfilename, zlegacyrownumber, zapprovalstatus
+        FROM dswtdir1_dbo.tvmemoapp_dcs_output_fromdcs_cleanseddata_scnarios1to6_preload_rptsel AS x
+        ORDER BY counter NULLS FIRST, zcounterlineitem NULLS FIRST;
+END;
+$procedure$

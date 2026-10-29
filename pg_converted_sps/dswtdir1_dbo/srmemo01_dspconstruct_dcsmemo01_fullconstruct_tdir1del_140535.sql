@@ -1,0 +1,11 @@
+CREATE OR REPLACE PROCEDURE dswtdir1_dbo.srmemo01_dspconstruct_dcsmemo01_fullconstruct_tdir1del()
+ LANGUAGE plpgsql
+AS $procedure$
+/*
+Created by:  zboa0018 7/5/2020 8:05:32 PM
+Description: Insert DSPConstruct into ttMEMO01
+*/
+BEGIN
+    DELETE FROM dswtdir1_dbo.srMEMO01_DSPConstruct_dcsMEMO01_FullConstruct_TDIR1DelSel;
+END;
+$procedure$

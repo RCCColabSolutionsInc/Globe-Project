@@ -1,0 +1,53 @@
+CREATE OR REPLACE PROCEDURE dswtdir1_dbo.trmemoapp_dcs_preload_preloaderror_insert_into_dcmemoapp_ins()
+ LANGUAGE plpgsql
+AS $procedure$
+/* #endregion */
+/* DCS */
+/* Data cleanse */
+/* #region trMEMOAPP_DCS_Preload_PreloadError_Insert_Into_DcMemoApp_Ins */
+BEGIN
+    INSERT INTO dswtdir1_dbo.dcmemoapp (addedby, addedon, addedvia, boastatus, changedby, changedon, changedvia, z_upld_filename, zactive, zamount_in_doc_curr, zamount_in_loc_curr2, zamount_in_local_cur, zapprovalstatus, zasset, zassignment, zbank_account, zbank_key, zbline_date, zbrand, zbusiness_center, zcharge_code, zcity, zcocd, zcost_center_code, zcost_ctr, zcounter, zcounterlineitem, zcountry, zcurr, zdelete, zdescription, zdisabled_byprocess, zdisabled_comments, zdisabled_counter, zdisabled_lineitem, zdoc_date, zdocexists, zdocument_header_text, zdsp_order, zdsp_uniquekey, zduplicate, zerror_aufnr_aufk_internalordernotcreatedincocd, zerror_belnr_documentexistinginbsak, zerror_belnr_documentexistinginbsik, zerror_bkzkp_csks_costcenter_blockedforposting, zerror_bukrs_lfb1_vendor_notextendedtococd, zerror_bukrs_lfbw_cocd_notexistinginvendormaster, zerror_bukrs_skb1_gl_notextendedtococd, zerror_counter, zerror_kostl_csks_costcenter_invaliddaterange, zerror_kostl_csks_costcenter_notcreated, zerror_kostl_csks_costcenter_notcreatedforcocd, zerror_lifnr_lfb1_vendor_notcreated, zerror_lifnr_lfbw_vendor_notexistinginmasterdata, zerror_lineitem, zerror_load, zerror_load_log_date, zerror_loevm_lfb1_vendor_markedfordeletion, zerror_mwskz_t007a_vatcodeisinvalid, zerror_mwskz_t030k_vatcodenotexists, zerror_objnr_prps_wbsobjectnumber_blockedforposting, zerror_paymethod_invalid, zerror_payterm_invalid, zerror_phas3_aufk_internalorder_closedforposting, zerror_pspnr_prps_wbselementnotcreated, zerror_saknr_ska1_gl_isdup, zerror_saknr_ska1_gl_notcreatedincoa, zerror_saknr_skb1_gl_notcreated, zerror_scenariooverlap, zerror_sourcevalues, zerror_sperr_lfb1_vendor_blockedforposting, zerror_witht_lfbw_whttype_notmaintainedforvendorcocd, zerror_wt_withc_lfbw_whtcode_notmaintainedforvendorcocd, zerror_wwpdt_t25a2_productlinesinvalid, zerror_wwpdt_t25a2_productlinesisinvalid, zerror_xloeb_ska1_gl_markedfordeletion, zerror_xloeb_skb1_gl_markedfordeletion, zerror_xloev_ska1_gl_markedfordeletion, zerror_xspea_ska1_gl_blockedforcreation, zerror_xspeb_ska1_gl_blockedforposting, zerror_xspeb_skb1_gl_blockedforposting, zerrormessage, zerrormessage_load, zevent, zexchange_rate, zfranchise_area, zgl_natural_code, zinput_vat_amount, zinputfileprocessed_date, zinvoice_number, zledger_group, zlegacyrownumber, zlegacyzaccrual_doc_fiscal_year, zlegacyzaccrual_doc_num_dcs, zlegacyzaccrual_doc_number, zlegacyzaccrual_fiscal_year_dcs, zlegacyzassignment, zlegacyzcompany_code, zlegacyzcompany_code_dcs, zlegacyzcost_center_code, zlegacyzcounter, zlegacyzcounterlineitem, zlegacyzdescription, zlegacyzdsp_uniquekey, zlegacyzgl_natural_code, zlegacyzgross_invoice_amount, zlegacyzinput_vat_amount, zlegacyzinputfilename, zlegacyzinvoice_amount_dcs, zlegacyzinvoice_date, zlegacyzinvoice_number, zlegacyzvat_code, zlegacyzvendor_code, zloaded, zmaterial, zmessage, zmvno, zname, znew_company_code, zorder, zoutputfile_newaccdoc_required, zpartner_profit_center, zpayment_method, zpayt, zperiod, zpk, zplan_type, zplnt, zpostal_code, zproduct_lines, zprofit_ctr, zproponent, zpstg_date, zpurch_doc, zpurchasing_line_item, zquantity, zref_key_1, zref_key_2, zreference, zreference_key_3, zreserve_1, zreserve_2, zrevenue_type, zroutedforload_date, zsaknr_ska1, zscenario, zscenario_counter_orderby, zscenario_counts, zscenario_zrownumber_max, zscenario_zrownumber_min, zsource, zspecial_gl, zstreet, zsub_product_a, zsub_product_b, ztax_number, ztechnology, ztext, ztimestamp, ztr_prt, ztransldate, ztxt50_skat, ztype, zunauthorized, zuom, zvalue_date, zvat_code, zvat_tax_code, zvendor_code, zvendor_gl_acct, zwbs_element, zwithholding_tax_base, zwithholding_tax_type, zwitholding_tax_code, zglaccount_type_ska1, zmwskz_skb1, zxmwno_skb1, zfstag_skb1, zsite_pla_id,
+    /* Added 2025-08 PPM requirement */
+    zrfp_approval_date,
+    /* Added 2025-08 PPM requirement */
+    zpayment_block_code,
+    /* Added 2025-08 PPM requirement */
+    zprofit_center,
+    /* Added 2025-08 PPM requirement */
+    zsub_prod_b,
+    /* Added 2025-08 PPM requirement */
+    zbusiness_entity,
+    /* Added 2025-08 NTG requirement */
+    zbuilding,
+    /* Added 2025-08 NTG requirement */
+    zland,
+    /* Added 2025-08 NTG requirement */
+    zrental_object,
+    /* Added 2025-08 NTG requirement */
+    zcontract
+    /* Added 2025-08 NTG requirement */
+    )
+    SELECT
+        addedby, addedon, addedvia, boastatus, changedby, changedon, changedvia, z_upld_filename, zactive, zamount_in_doc_curr, zamount_in_loc_curr2, zamount_in_local_cur, zapprovalstatus, zasset, zassignment, zbank_account, zbank_key, zbline_date, zbrand, zbusiness_center, zcharge_code, zcity, zcocd, zcost_center_code, zcost_ctr, zcounter, zcounterlineitem, zcountry, zcurr, zdelete, zdescription, zdisabled_byprocess, zdisabled_comments, zdisabled_counter, zdisabled_lineitem, zdoc_date, zdocexists, zdocument_header_text, zdsp_order, zdsp_uniquekey, zduplicate, zerror_aufnr_aufk_internalordernotcreatedincocd, zerror_belnr_documentexistinginbsak, zerror_belnr_documentexistinginbsik, zerror_bkzkp_csks_costcenter_blockedforposting, zerror_bukrs_lfb1_vendor_notextendedtococd, zerror_bukrs_lfbw_cocd_notexistinginvendormaster, zerror_bukrs_skb1_gl_notextendedtococd, zerror_counter, zerror_kostl_csks_costcenter_invaliddaterange, zerror_kostl_csks_costcenter_notcreated, zerror_kostl_csks_costcenter_notcreatedforcocd, zerror_lifnr_lfb1_vendor_notcreated, zerror_lifnr_lfbw_vendor_notexistinginmasterdata, zerror_lineitem, zerror_load, zerror_load_log_date, zerror_loevm_lfb1_vendor_markedfordeletion, zerror_mwskz_t007a_vatcodeisinvalid, zerror_mwskz_t030k_vatcodenotexists, zerror_objnr_prps_wbsobjectnumber_blockedforposting, zerror_paymethod_invalid, zerror_payterm_invalid, zerror_phas3_aufk_internalorder_closedforposting, zerror_pspnr_prps_wbselementnotcreated, zerror_saknr_ska1_gl_isdup, zerror_saknr_ska1_gl_notcreatedincoa, zerror_saknr_skb1_gl_notcreated, zerror_scenariooverlap, zerror_sourcevalues, zerror_sperr_lfb1_vendor_blockedforposting, zerror_witht_lfbw_whttype_notmaintainedforvendorcocd, zerror_wt_withc_lfbw_whtcode_notmaintainedforvendorcocd, zerror_wwpdt_t25a2_productlinesinvalid, zerror_wwpdt_t25a2_productlinesisinvalid, zerror_xloeb_ska1_gl_markedfordeletion, zerror_xloeb_skb1_gl_markedfordeletion, zerror_xloev_ska1_gl_markedfordeletion, zerror_xspea_ska1_gl_blockedforcreation, zerror_xspeb_ska1_gl_blockedforposting, zerror_xspeb_skb1_gl_blockedforposting, zerrormessage, zerrormessage_load, zevent, zexchange_rate, zfranchise_area, zgl_natural_code, zinput_vat_amount, zinputfileprocessed_date, zinvoice_number, zledger_group, zlegacyrownumber, zlegacyzaccrual_doc_fiscal_year, zlegacyzaccrual_doc_num_dcs, zlegacyzaccrual_doc_number, zlegacyzaccrual_fiscal_year_dcs, zlegacyzassignment, zlegacyzcompany_code, zlegacyzcompany_code_dcs, zlegacyzcost_center_code, zlegacyzcounter, zlegacyzcounterlineitem, zlegacyzdescription, zlegacyzdsp_uniquekey, zlegacyzgl_natural_code, zlegacyzgross_invoice_amount, zlegacyzinput_vat_amount, zlegacyzinputfilename, zlegacyzinvoice_amount_dcs, zlegacyzinvoice_date, zlegacyzinvoice_number, zlegacyzvat_code, zlegacyzvendor_code, zloaded, zmaterial, zmessage, zmvno, zname, znew_company_code, zorder, zoutputfile_newaccdoc_required, zpartner_profit_center, zpayment_method, zpayt, zperiod, zpk, zplan_type, zplnt, zpostal_code, zproduct_lines, zprofit_ctr, zproponent, zpstg_date, zpurch_doc, zpurchasing_line_item, zquantity, zref_key_1, zref_key_2, zreference, zreference_key_3, zreserve_1, zreserve_2, zrevenue_type, zroutedforload_date, zsaknr_ska1, zscenario, zscenario_counter_orderby, zscenario_counts, zscenario_zrownumber_max, zscenario_zrownumber_min, zsource, zspecial_gl, zstreet, zsub_product_a, zsub_product_b, ztax_number, ztechnology, ztext, ztimestamp, ztr_prt, ztransldate, ztxt50_skat, ztype, zunauthorized, zuom, zvalue_date, zvat_code, zvat_tax_code, zvendor_code, zvendor_gl_acct, zwbs_element, zwithholding_tax_base, zwithholding_tax_type, zwitholding_tax_code, zglaccount_type_ska1, zmwskz_skb1, zxmwno_skb1, zfstag_skb1, zsite_pla_id,
+        /* Added 2025-08 PPM requirement */
+        zrfp_approval_date,
+        /* Added 2025-08 PPM requirement */
+        zpayment_block_code,
+        /* Added 2025-08 PPM requirement */
+        zprofit_center,
+        /* Added 2025-08 PPM requirement */
+        zsub_prod_b,
+        /* Added 2025-08 PPM requirement */
+        zbusiness_entity,
+        /* Added 2025-08 NTG requirement */
+        zbuilding,
+        /* Added 2025-08 NTG requirement */
+        zland,
+        /* Added 2025-08 NTG requirement */
+        zrental_object,
+        /* Added 2025-08 NTG requirement */
+        zcontract
+        /* Added 2025-08 NTG requirement */
+        FROM dswtdir1_dbo.trmemoapp_dcs_preload_preloaderror_insert_into_dcmemoapp_inssel;
+END;
+$procedure$

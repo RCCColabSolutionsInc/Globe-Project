@@ -1,0 +1,13 @@
+CREATE OR REPLACE PROCEDURE dswtdir1_dbo.trbayan_php_unbilled_zloadedupd()
+ LANGUAGE plpgsql
+AS $procedure$
+/*
+Created by:  Pradeep Gupta 10/12/2020
+Modified by: Pradeep Gupta 10/12/2020
+Description: Update zLoaded Flag
+*/
+BEGIN
+    UPDATE dswtdir1_dbo.trbayan_php_unbilled_zloadedupdsel
+    SET zloaded = zloadednew;
+END;
+$procedure$

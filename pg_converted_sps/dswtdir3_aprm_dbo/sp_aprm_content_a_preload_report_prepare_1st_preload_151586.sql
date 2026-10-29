@@ -1,0 +1,43 @@
+CREATE OR REPLACE PROCEDURE dswtdir3_aprm_dbo.sp_aprm_content_a_preload_report_prepare_1st_preload()
+ LANGUAGE plpgsql
+AS $procedure$
+BEGIN
+TRUNCATE TABLE dswtdir3_aprm_dbo.rpt_content_a_preload_report_1st_cache;
+	INSERT INTO dswtdir3_aprm_dbo.rpt_content_a_preload_report_1st_cache
+           ("Column1"
+           ,"Column2"
+           ,"Column3"
+           ,"Column4"
+           ,"Column5"
+           ,"Column6"
+           ,"Column7"
+           ,"Column8"
+           ,"Column9"
+           ,"Column10"
+           ,"Column11"
+           ,"Column12"
+           ,"Column13"
+           ,"Column14"
+           ,"Column15"
+           ,"Column16"
+           ,"Column17")
+	SELECT "Column1"
+      ,"Column2"
+      ,"Column3"
+      ,"Column4"
+      ,"Column5"
+      ,"Column6"
+      ,"Column7"
+      ,"Column8"
+      ,"Column9"
+      ,"Column10"
+      ,"Column11"
+      ,"Column12"
+      ,"Column13"
+      ,"Column14"
+      ,"Column15"
+      ,"Column16"
+      ,"Column17"
+  FROM dswtdir3_aprm_dbo.tvaprm_content_1st_preloadrptsel;
+END;
+$procedure$
