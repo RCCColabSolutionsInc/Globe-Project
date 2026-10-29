@@ -1,0 +1,135 @@
+ETL piplelines and their databases
+0. Global databases
+- dgS4HANA_TDIR1: this is a global database that could be used by most etl piplelines. Data fromn S4HANA
+- ESTSS: this is a global database that could be used by most etl piplelines
+- etl_db: this is a global database that could be used by most etl piplelines
+- Linked Server: This has direct links to S4HANA used to populare lookup data
+
+1.  MyBSS Bayan Bill Cycles:
+- databases: sdbTDIR2_Bayan,dswTDIR2_Bayan,dswTDIR2_Bayan_Cache
+- sql agent jobs:
+-- MyBSS_Bayan_EOC00_P01_Setup_Cleanup_12Mth
+-- MyBSS_Bayan_EOC01_P10_Preload_12Mth
+-- MyBSS_Bayan_EOC02_P10_Preload_14Mth
+-- MyBSS_Bayan_EOC03_P10_Preload_15Mth
+-- MyBSS_Bayan_EOC04_P10_Preload_16Mth
+-- MyBSS_Bayan_EOC05_P10_Preload_17Mth
+-- MyBSS_Bayan_EOC06_P10_Preload_19Mth
+-- MyBSS_Bayan_EOC07_P10_Preload_21Mth
+-- MyBSS_Bayan_EOC08_P10_Preload_24Mth
+-- MyBSS_Bayan_EOC09_P10_Preload_26Mth 
+-- MyBSS_Bayan_EOC10_P10_Preload_30Mth
+-- MyBSS_Bayan_EOC11_P10_Preload_02Mth
+-- MyBSS_Bayan_EOC01_P20_Postload_12Mth
+-- MyBSS_Bayan_EOC02_P10_Postload_14Mth
+-- MyBSS_Bayan_EOC03_P10_Postload_15Mth
+-- MyBSS_Bayan_EOC04_P10_Postload_16Mth
+-- MyBSS_Bayan_EOC05_P10_Postload_17Mth
+-- MyBSS_Bayan_EOC06_P10_Postload_19Mth
+-- MyBSS_Bayan_EOC07_P10_Postload_21Mth
+-- MyBSS_Bayan_EOC08_P10_Postoad_24Mth
+-- MyBSS_Bayan_EOC09_P10_Postload_26Mth 
+-- MyBSS_Bayan_EOC10_P10_Postload_30Mth
+-- MyBSS_Bayan_EOC11_P10_Postload_02Mth
+
+2. MyBSS Globe Bill Cycles
+- databases: sdbTDIR2_Globe,dswTDIR2_Globe,dswTDIR2_Globe_Cache
+- sql agent jobs:
+-- MyBSS_Globe_EOC00_P01_Setup_Cleanup_12Mth
+-- MyBSS_Globe_EOC01_P10_Preload_12Mth
+-- MyBSS_Globe_EOC02_P10_Preload_14Mth
+-- MyBSS_Globe_EOC03_P10_Preload_15Mth
+-- MyBSS_Globe_EOC04_P10_Preload_16Mth
+-- MyBSS_Globe_EOC05_P10_Preload_17Mth
+-- MyBSS_Globe_EOC06_P10_Preload_19Mth
+-- MyBSS_Globe_EOC07_P10_Preload_21Mth
+-- MyBSS_Globe_EOC08_P10_Preload_24Mth
+-- MyBSS_Globe_EOC09_P10_Preload_26Mth 
+-- MyBSS_Globe_EOC10_P10_Preload_30Mth
+-- MyBSS_Globe_EOC11_P10_Preload_02Mth
+-- MyBSS_Globe_EOC01_P20_Postload_12Mth
+-- MyBSS_Globe_EOC02_P10_Postload_14Mth
+-- MyBSS_Globe_EOC03_P10_Postload_15Mth
+-- MyBSS_Globe_EOC04_P10_Postload_16Mth
+-- MyBSS_Globe_EOC05_P10_Postload_17Mth
+-- MyBSS_Globe_EOC06_P10_Postload_19Mth
+-- MyBSS_Globe_EOC07_P10_Postload_21Mth
+-- MyBSS_Globe_EOC08_P10_Postoad_24Mth
+-- MyBSS_Globe_EOC09_P10_Postload_26Mth 
+-- MyBSS_Globe_EOC10_P10_Postload_30Mth
+-- MyBSS_Globe_EOC11_P10_Postload_02Mth
+
+3. MyBSS Innove Bill Cycles
+- databases: sdbTDIR2_Innove,dswTDIR2_Innnove,dswTDIR2_Innove_Cache
+- sql agent jobs:
+-- MyBSS_Innove_EOC00_P01_Setup_Cleanup_12Mth
+-- MyBSS_Innove_EOC01_P10_Preload_12Mth
+-- MyBSS_Innove_EOC02_P10_Preload_14Mth
+-- MyBSS_Innove_EOC03_P10_Preload_15Mth
+-- MyBSS_Innove_EOC04_P10_Preload_16Mth
+-- MyBSS_Innove_EOC05_P10_Preload_17Mth
+-- MyBSS_Innove_EOC06_P10_Preload_19Mth
+-- MyBSS_Innove_EOC07_P10_Preload_21Mth
+-- MyBSS_Innove_EOC08_P10_Preload_24Mth
+-- MyBSS_Innove_EOC09_P10_Preload_26Mth 
+-- MyBSS_Innove_EOC10_P10_Preload_30Mth
+-- MyBSS_Innove_EOC11_P10_Preload_02Mth
+-- MyBSS_Innove_EOC01_P20_Postload_12Mth
+-- MyBSS_Innove_EOC02_P10_Postload_14Mth
+-- MyBSS_Innove_EOC03_P10_Postload_15Mth
+-- MyBSS_Innove_EOC04_P10_Postload_16Mth
+-- MyBSS_Innove_EOC05_P10_Postload_17Mth
+-- MyBSS_Innove_EOC06_P10_Postload_19Mth
+-- MyBSS_Innove_EOC07_P10_Postload_21Mth
+-- MyBSS_Innove_EOC08_P10_Postoad_24Mth
+-- MyBSS_Innove_EOC09_P10_Postload_26Mth 
+-- MyBSS_Innove_EOC10_P10_Postload_30Mth
+-- MyBSS_Innove_EOC11_P10_Postload_02Mth
+
+4. MyBSS Bayan EOM(End on month)
+- databases: sdbTDIR2_Bayan,dswTDIR2_Bayan,dswTDIR2_Bayan_Cache
+- sql agent jobs:
+
+5. MyBSS Globe EOM (End of month)
+- databases: sdbTDIR2_Globe,dswTDIR2_Globe,dswTDIR2_Globe_Cache
+- sql agent jobs:
+
+6. MyBSS Innove EOM (End of month)
+- databases: sdbTDIR2_Innove,dswTDIR2_Innnove,dswTDIR2_Innove_Cache
+- sql agent jobs:
+
+7. APRM Voice Bayan
+- databases: sdbTDIR3_APRM, dswTDIR3_APRM, dswTDIR3_APRM_Cache
+- sql agent jobs:
+
+8. APRM Voice Innove
+- databases: sdbTDIR3_APRM, dswTDIR3_APRM, dswTDIR3_APRM_Cache
+- sql agent jobs:
+
+9. APRM Voice Globe
+- databases: sdbTDIR3_APRM, dswTDIR3_APRM, dswTDIR3_APRM_Cache
+- sql agent jobs:
+
+10. Memo Standard Template
+- databases: sdbTDIR1_MemoApp, dswTDIR1, dswTDIR1_Cache
+- sql agent jobs:
+
+11. ICCBS Bayan
+- databases: sdbTDIR1_ICCBS, dswTDIR1, dswTDIR1_Cache
+- sql agent jobs:
+
+12. ICCBS Innove
+- databases: sdbTDIR1_ICCBS, dswTDIR1, dswTDIR1_Cache
+- sql agent jobs:
+
+13. Prepaid Reclas
+- databases: sdbTDIR1_Prepaid, dswTDIR1, dswTDIR1_Cache
+- sql agent jobs:
+
+14. ISMS IBOB Actualization
+- databases: sdbTDIP2_Actualization, dswTDIP2_Actualization, dswTDIP2_Actualization_Cache
+- sql agent jobs:
+
+15. ISMS IOT DA
+- databases: sdbTDIP2_IOT_DA, dswTDIP2_IOT_DA, dswTDIP2_IOT_DA_Cache
+- sql agent jobs:
